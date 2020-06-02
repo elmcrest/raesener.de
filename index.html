@@ -53,7 +53,12 @@
     .header-typo .description {
         line-height: 1.4;
     }
-
+    .avatar img, .avatar source{
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
     main {
         color: white;
         position: relative;
@@ -85,12 +90,6 @@
         text-decoration: none;
         color: white;
     }
-    .avatar {
-        vertical-align: middle;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-    }
 </style>
 <body>
     <video loop muted autoplay playsinline poster="/assets/background-video/typing_720pFrame0.jpg">
@@ -101,7 +100,12 @@
             <span class="name">Marius Räsener</span><br>
             <span class="description">nerd of choice</span>
         </span>
-        <img class="avatar" src="/assets/avatar.jpeg">
+        ​<picture class="avatar">
+            <source srcset="/assets/avatar.webp" type="image/webp" alt="Avatar Picture">
+            <source srcset="/assets/avatar.jpg" type="image/jpeg" alt="Avatar Picture">
+            <img src="/assets/avatar.jpg" alt="Avatar Picture">
+        </picture>
+        
     </header>
     <main>
         <span class="heading-wrapper">
