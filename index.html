@@ -73,7 +73,7 @@
         justify-content: space-around;
         margin-bottom: 20vh;
     }
-    @media (min-width: 650px) {
+    @media (min-width: 440px) {
         main {
             grid-template-columns: 150px 150px;
             justify-content: space-around;
@@ -106,7 +106,7 @@
     }
 </style>
 <body>
-    <video loop muted autoplay playsinline poster="/assets/background-video/typing_720pFrame0.jpg">
+    <video loop muted autoplay playsinline preload="none" poster="/assets/background-video/typing_720pFrame0.jpg">
         <source src="/assets/background-video/typing_720pCBR23.mp4" type="video/mp4">
     </video>
     <header class="viewport-header">
@@ -163,9 +163,10 @@
         </ul>
     </main>
     <!-- <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script> -->
-<script>
+<!-- google analytics custom start script, currently throws ReferenceError: track is not defined -->
+<!-- <script>
  !function(e,o,t){"use strict";var a=document,i=navigator||{},c=encodeURIComponent,n=function(o,n,r,d,x,v,l){if(!i.userAgent.match(/(Baiduspider|Bing|Lighthouse|Google|YandexBot)/i)){var s="https://www.google-analytics.com/collect";try{var g=function(e){var o=[];for(var t in e)e.hasOwnProperty(t)&&void 0!==e[t]&&o.push(c(t)+"="+c(e[t]));return o.join("&")}({v:"1",ds:"web",aip:t.anonymizeIp?1:void 0,tid:"UA-168225305-1",cid:(localStorage.getItem("raesener_cid")||localStorage.setItem("raesener_cid",(u=(new Date).getTime(),"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,(function(e){var o=(u+16*Math.random())%16|0;return u=Math.floor(u/16),("x"==e?o:3&o|8).toString(16)})))),localStorage.getItem("raesener_cid")),t:o||"pageview",sd:t.colorDepth&&screen.colorDepth?"".concat(screen.colorDepth,"-bits"):void 0,dr:a.referrer||void 0,dt:a.title,dl:a.location.origin+a.location.pathname+a.location.search,ul:t.language?(i.language||"").toLowerCase():void 0,de:t.characterSet?a.characterSet:void 0,sr:t.screenSize?"".concat((e.screen||{}).width,"x").concat((e.screen||{}).height):void 0,vp:t.screenSize&&e.visualViewport?"".concat((e.visualViewport||{}).width,"x").concat((e.visualViewport||{}).height):void 0,ec:n||void 0,ea:r||void 0,el:d||void 0,ev:x||void 0,exd:v||void 0,exf:void 0!==l&&0==!!l?0:void 0})}catch(p){}if(g)if(i.sendBeacon)i.sendBeacon(s,g);else{var h=new XMLHttpRequest;h.open("POST",s,!0),h.send(g)}}var u};e.gtag={track:n,trackEvent:function(e,o,t,a){return n("event",e,o,t,a)}}}(window,0,{anonymizeIp:!0,colorDepth:!0,characterSet:!0,screenSize:!0,language:!0});  
  track(); 
-</script>
+</script> -->
 </body>
 </html>
