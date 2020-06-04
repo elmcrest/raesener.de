@@ -13,21 +13,21 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://www.raesener.de" />
     <!-- Primary Meta Tags -->
-    <title>Marius Räsener - Excellence is a hab𝒾𝓉</title>
-    <meta name="title" content="Marius Räsener - Excellence is a hab𝒾𝓉">
+    <title>Marius Räsener - Excellence is a hab𝙸𝚃</title>
+    <meta name="title" content="Marius Räsener - Excellence is a hab𝙸𝚃">
     <meta name="description" content="Business card of Marius Räsener, Full Stack Web Developer. Hit me with an IT challenge.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://raesener.de/">
-    <meta property="og:title" content="Marius Räsener - Excellence is a hab𝒾𝓉">
+    <meta property="og:title" content="Marius Räsener - Excellence is a hab𝙸𝚃">
     <meta property="og:description" content="Business card of Marius Räsener, Full Stack Web Developer. Hit me with an IT challenge.">
     <meta property="og:image" content="/assets/thumb_metatags.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="http://raesener.de/">
-    <meta property="twitter:title" content="Marius Räsener - Excellence is a hab𝒾𝓉">
+    <meta property="twitter:title" content="Marius Räsener - Excellence is a hab𝙸𝚃">
     <meta property="twitter:description" content="Business card of Marius Räsener, Full Stack Web Developer. Hit me with an IT challenge.">
     <meta property="twitter:image" content="/assets/thumb_metatags.jpg">
 </head>
@@ -106,21 +106,22 @@
         border-radius: 50%;
     }
 
-    main {
+    .get-in-touch {
         color: white;
         position: relative;
         padding: 1rem;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         align-items: baseline;
-        /* justify-content: space-around; */
+        max-width: 40em;
+        margin: auto;
         padding-bottom: 20vh;
     }
 
     @media (min-width: 440px) {
-        main {
+        .get-in-touch {
             grid-template-columns: 150px 150px;
-            justify-content: space-around;
+            justify-content: space-between;
         }
     }
 
@@ -129,21 +130,21 @@
         font-size: 1.1em;
     }
 
-    main ul {
+    .get-in-touch ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
 
     .heading-wrapper,
-    main ul li {
+    .get-in-touch ul li {
         display: flex;
         align-items: center;
         margin-bottom: 0.5em;
     }
 
     .heading-wrapper svg,
-    main ul li svg {
+    .get-in-touch ul li svg {
         display: inline-block;
         height: 1.3em;
         margin-right: 1em;
@@ -152,9 +153,18 @@
     .fill-highlight {
         fill: #18b05c;
     }
-    main ul li a {
+    .get-in-touch ul li a {
         text-decoration: none;
         color: white;
+    }
+    .about {
+        position: relative;
+        color: white;
+        padding: 1rem;
+        line-height: 1.4em;
+        font-weight: lighter;
+        max-width: 40em;
+        margin: auto;
     }
 
 </style>
@@ -166,7 +176,7 @@
     <header class="viewport-header">
         <span class="header-typo">
             <span class="name">Marius Räsener</span><br>
-            <span class="description">Excellence is a hab𝒾𝓉.</span>
+            <span class="description">Excellence is a hab𝙸𝚃.</span>
         </span>
         ​<picture class="avatar">
             <source srcset="/assets/avatar.webp" type="image/webp" alt="Avatar Picture">
@@ -175,7 +185,10 @@
         </picture>
 
     </header>
-    <main>
+    <div class="about">
+        <p>Despite todays most successful companies are literally driven by 𝙸𝚃, the foundation for excellence is still the habits and "before 𝙸𝚃" processes. To destinguish the low hanging fruits from the tough nuts, get in touch.</p>
+    </div>
+    <div class="get-in-touch">
         <span class="heading-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172" style="fill:#000000;">
                 <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
@@ -299,7 +312,7 @@
                 <a rel="noreferrer" target="_blank" href="https://instagram.com/raesener">instagram</a>
             </li>
         </ul>
-    </main>
+    </div>
     <!-- <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script> -->
     <!-- google analytics custom start script -->
     <script defer src="/js/ga.js"></script>
