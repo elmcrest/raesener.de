@@ -111,9 +111,10 @@
     .get-in-touch {
         color: white;
         position: relative;
-        padding: 1rem;
+        padding: 1em;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(9.375em, 1fr));
+        justify-content: space-between;
         align-items: baseline;
         max-width: 40em;
         margin: auto;
@@ -123,10 +124,13 @@
     @media (min-width: 27.5em) {
         .get-in-touch {
             grid-template-columns: 9.375em 9.375em;
-            justify-content: space-between;
         }
     }
-
+    @media (min-width: 40em) {
+        .get-in-touch {
+            justify-content: space-evenly;
+        }
+    }
     h2,
     .heading-wrapper h2 {
         font-size: 1.1em;
@@ -162,11 +166,16 @@
     .about {
         position: relative;
         color: white;
-        padding: 1rem;
         line-height: 1.4em;
         font-weight: lighter;
         max-width: 40em;
         margin: auto;
+        padding: 1em;
+    }
+    @media (min-width: 41em) {
+        .about {
+            padding: 0;
+        }
     }
 
     @media (min-width: 26.375em) {
