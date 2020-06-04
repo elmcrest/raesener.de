@@ -71,14 +71,14 @@
         line-height: 1.2;
         text-align: center;
         font-size: 1.2em;
-        margin-right: 20px;
+        margin-right: 1.25em;
     }
 
     .name {
         font-size: 1.1em;
         height: 1.4em;
         display: inline-block;
-        /* border-bottom: 1px solid white; */
+        /* border-bottom: 0.063em solid white; */
         letter-spacing: 0.1em;
         position: relative;
     }
@@ -87,9 +87,9 @@
         content: '';
         width: 86.9%;
         position: absolute;
-        left: 10px;
-        bottom: -1px;
-        border-width: 0 0 1px;
+        left: 0.625em;
+        bottom: -0.063em;
+        border-width: 0 0 0.063em;
         border-style: solid;
         border-color: white;
     }
@@ -103,8 +103,8 @@
     .avatar img,
     .avatar source {
         vertical-align: middle;
-        width: 50px;
-        height: 50px;
+        width: 3.125em;
+        height: 3.125em;
         border-radius: 50%;
     }
 
@@ -113,16 +113,16 @@
         position: relative;
         padding: 1rem;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(9.375em, 1fr));
         align-items: baseline;
         max-width: 40em;
         margin: auto;
         padding-bottom: 20vh;
     }
 
-    @media (min-width: 440px) {
+    @media (min-width: 27.5em) {
         .get-in-touch {
-            grid-template-columns: 150px 150px;
+            grid-template-columns: 9.375em 9.375em;
             justify-content: space-between;
         }
     }
@@ -169,7 +169,7 @@
         margin: auto;
     }
 
-    @media (min-width: 390px) {
+    @media (min-width: 24.75em) {
         .br-responsive {
             display: none;
         }
