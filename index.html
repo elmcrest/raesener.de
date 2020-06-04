@@ -74,11 +74,25 @@
         margin-right: 20px;
     }
 
-    .header-typo .name {
+    .name {
         font-size: 1.1em;
         height: 1.4em;
         display: inline-block;
-        border-bottom: 1px solid white;
+        /* border-bottom: 1px solid white; */
+        letter-spacing: 0.1em;
+        position: relative;
+    }
+
+    .name:after {
+        content: '';
+        width: 98.8%;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+
+        border-width: 0 0 1px;
+        border-style: solid;
+        border-color: white;
     }
 
     .header-typo .claim {
