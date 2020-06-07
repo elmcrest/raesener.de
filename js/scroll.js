@@ -1,13 +1,17 @@
-let page0 = document.querySelector(".page0");
-let page1 = document.querySelector(".page1");
+let pages = document.querySelectorAll(".page");
 
-function addClickToScrollIntoView(source, target) {
-    source.addEventListener("click", () => {
-        target.scrollIntoView({
-            behavior: "smooth"
-        });
-    })
-}
-
-addClickToScrollIntoView(page0, page1);
-addClickToScrollIntoView(page1, page0);
+pages.forEach((element, index, pages) => {
+    if (Object.is(pages.length - 1, index)) {
+        element.addEventListener("click", () => {
+            pages[0].scrollIntoView({
+                behavior: "smooth"
+            })
+        })
+    } else {
+        element.addEventListener("click", () => {
+            pages[index+1].scrollIntoView({
+                behavior: "smooth"
+            })
+        })
+    }
+})
