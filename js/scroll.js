@@ -1,7 +1,5 @@
-let viewportHeader = document.querySelector(".viewport-header");
-let getInTouch = document.querySelector(".get-in-touch");
-let about = document.querySelector(".about");
-let video = document.querySelector("video");
+let page0 = document.querySelector(".page0");
+let page1 = document.querySelector(".page1");
 
 function addClickToScrollIntoView(source, target) {
     source.addEventListener("click", () => {
@@ -11,7 +9,5 @@ function addClickToScrollIntoView(source, target) {
     })
 }
 
-addClickToScrollIntoView(viewportHeader, getInTouch);
-addClickToScrollIntoView(about, viewportHeader);
-addClickToScrollIntoView(video, viewportHeader);
-addClickToScrollIntoView(getInTouch, viewportHeader);
+addClickToScrollIntoView(page0, page1);
+addClickToScrollIntoView(page1, page0);
