@@ -1,5 +1,5 @@
 # path:
-/
+/*
     # headers
     Content-Security-Policy: base-uri 'self'; script-src 'self' https://unpkg.com; connect-src 'self' https://www.google-analytics.com; img-src 'self' https://www.google-analytics.com
     Feature-Policy: accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'
