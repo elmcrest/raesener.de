@@ -15,20 +15,20 @@
     <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin="">
     <!-- Primary Meta Tags -->
     <title>Marius Räsener - Excellence is a hab𝙸𝚃</title>
-    <meta name="title" content="Marius Räsener - Excellence is a hab𝙸𝚃.">
+    <meta name="title" content="Marius Räsener - Excellence is a hab𝙸𝚃">
     <meta name="description" content="Business card of Marius Räsener, Full Stack Web Developer. Hit me with an IT challenge.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://raesener.de/">
-    <meta property="og:title" content="Marius Räsener - Excellence is a hab𝙸𝚃.">
+    <meta property="og:title" content="Marius Räsener - Excellence is a hab𝙸𝚃">
     <meta property="og:description" content="Business card of Marius Räsener, Full Stack Web Developer. Hit me with an IT challenge.">
     <meta property="og:image" content="/assets/thumb_metatags.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="http://raesener.de/">
-    <meta property="twitter:title" content="Marius Räsener - Excellence is a hab𝙸𝚃.">
+    <meta property="twitter:title" content="Marius Räsener - Excellence is a hab𝙸𝚃">
     <meta property="twitter:description" content="Business card of Marius Räsener, Full Stack Web Developer. Hit me with an IT challenge.">
     <meta property="twitter:image" content="/assets/thumb_metatags.jpg">
 </head>
@@ -100,7 +100,7 @@
         content: '';
         width: 86.9%;
         position: absolute;
-        left: 0.625em;
+        left: 0.525em;
         bottom: -0.063em;
         border-width: 0 0 0.063em;
         border-style: solid;
@@ -110,6 +110,7 @@
         line-height: 1.4;
         padding-top: 0.1em;
         font-size: 0.7em;
+        font-weight: lighter;
     }
     .avatar img,
     .avatar source {
@@ -124,25 +125,24 @@
         font-weight: lighter;
         max-width: 40em;
         padding: 1em;
+        text-align: center;
     }
     @media (min-width: 41em) {
         .about {
             padding: 0;
+            text-align: left;
         }
     }
     .info-grid {
         color: white;
         display: grid;
-        /* grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
-        justify-content: space-between;
-        align-items: baseline;
-        justify-items: center;
-        align-content: center;
-        max-width: 40em;
-        width: 100vw; */
         grid-gap: 1em;
+        width: 100%;
+        max-width: 40em;
+        box-sizing: border-box;
+        padding: 1em;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
     }
     @media (min-width: 27.5em) {
         .info-grid {
@@ -154,7 +154,8 @@
     }
     @media (min-width: 40em) {
         .info-grid {
-            justify-content: space-evenly;
+            justify-content: space-between;
+            padding: 0;
         }
     }
     @media (min-width: 420px) {
@@ -227,7 +228,7 @@
             <span class="vertical-offset">
             <span class="header-typo">
                 <span class="name">Marius Räsener</span><br>
-                <span class="claim">Excellence is a hab𝙸𝚃.</span>
+                <span class="claim">Excellence is a hab𝙸𝚃</span>
             </span>
             ​<picture class="avatar" >
                 <source srcset="/assets/avatar.webp" type="image/webp" alt="Avatar Picture">
@@ -238,7 +239,7 @@
         </div>
         <div class="page1 page">
             <div class="about">
-                <p>Welcome to my business card.<br>This is a little showcase about my skills - but don't get me wrong, I'm not your regular full stack web developer. Using HTML, modern CSS and just a touch of Javascript here is just the tip of the iceberg. F.e. did you notice that it's me typing in the background? Or maybe that the "𝙸𝚃" I'm using isn't a special font but just two unicode characters?<br> I'm not sure if there is anything coming close to 𝙸𝚃 regarding importance of details.</p>
+                <p>Welcome to my business card.<br>This is a little showcase about my skills - but don't get me wrong, I'm not your regular full stack web developer. Using HTML, modern CSS and just a touch of Javascript here is just the tip of the iceberg. F.e. did you notice that it's me typing in the background? Or maybe that the 𝙸𝚃 I'm using isn't a special font but just two unicode characters?<br> I'm not sure if there is anything coming close to 𝙸𝚃 regarding importance of details.</p>
             </div>
             <div class="info-grid">
                 <span class="span-2x">
@@ -332,7 +333,7 @@
                     </svg>
                     <a rel="noreferrer" target="_blank" href="https://github.com/elmcrest/raesener.de">github</a>
                 </span>
-                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172" style=" fill:#000000;">
+                <!-- <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172" style=" fill:#000000;">
                         <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                             stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
                             font-family="none" font-weight="none" font-size="none" text-anchor="none"
@@ -361,7 +362,7 @@
                         </g>
                     </svg>
                     <a rel="noreferrer" target="_blank" href="https://instagram.com/raesener">instagram</a>
-                </span>
+                </span> -->
             </div>
         </div>
         <div class="page2 page">
