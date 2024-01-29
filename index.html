@@ -30,7 +30,7 @@
       color="#5bbad5"
     />
     <meta name="msapplication-TileColor" content="#525a66" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#111111" />
     <link rel="canonical" href="https://raesener.de" />
     <!-- Primary Meta Tags -->
     <title>Marius Räsener - Excellence is a hab𝙸𝚃</title>
@@ -149,7 +149,7 @@
       grid-template-rows: 100% auto;
     }
     .area-fullscreen {
-      height: calc(100vh - 1rem);
+      height: calc(100svh - 1rem);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -892,22 +892,4 @@
       <div class="col"></div>
     </div>
   </body>
-  <script>
-    (function (d) {
-      var w = d.documentElement.offsetWidth,
-        t = d.createTreeWalker(d.body, NodeFilter.SHOW_ELEMENT),
-        b;
-      while (t.nextNode()) {
-        b = t.currentNode.getBoundingClientRect();
-        if (b.right > w || b.left < 0) {
-          t.currentNode.style.setProperty(
-            "outline",
-            "1px dotted red",
-            "important"
-          );
-          console.log(t.currentNode);
-        }
-      }
-    })(document);
-  </script>
 </html>
