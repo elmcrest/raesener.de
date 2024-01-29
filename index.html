@@ -139,17 +139,17 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      margin: 10rem;
+      padding-bottom: 10rem;
     }
 
     .outer-grid {
       display: grid;
       grid-template-columns: 1fr min(100%, 54rem) 1fr;
-      grid-template-rows: 100vh auto;
+      grid-template-rows: 100% auto;
     }
     .area-fullscreen {
       width: 100%;
-      height: 100vh;
+      height: 100dvh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -170,8 +170,8 @@
     }
     .area-tech-stack {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(13rem, 100%), 1fr));
-      grid-gap: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+      grid-gap: 2rem;
       margin-bottom: 5rem;
     }
     .area-inner {
@@ -192,8 +192,6 @@
       display: flex;
       align-items: end;
       flex-direction: row;
-      padding: 0.6rem 0.5rem 0.6rem 0.5rem;
-      min-width: 13rem;
     }
     .section-header {
       display: flex;
@@ -850,7 +848,7 @@
                 rel="noreferrer"
                 target="_blank"
                 href="https://cloud.google.com"
-                >Google Cloud Platform</a
+                >GCP</a
               >
             </div>
           </div>
@@ -873,4 +871,22 @@
       <div class="col"></div>
     </div>
   </body>
+  <script>
+    (function (d) {
+      var w = d.documentElement.offsetWidth,
+        t = d.createTreeWalker(d.body, NodeFilter.SHOW_ELEMENT),
+        b;
+      while (t.nextNode()) {
+        b = t.currentNode.getBoundingClientRect();
+        if (b.right > w || b.left < 0) {
+          t.currentNode.style.setProperty(
+            "outline",
+            "1px dotted red",
+            "important"
+          );
+          console.log(t.currentNode);
+        }
+      }
+    })(document);
+  </script>
 </html>
