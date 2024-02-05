@@ -158,50 +158,52 @@ body {
     place-items: center;
     place-self: center;
     height: 100svh;
+}
 
-    .head-grid {
-        display: grid;
-        justify-items: center;
-        align-items: center;
-        column-gap: var(--col-gap-sm);
-        grid-template-areas:
-            "name avatar"
-            "line avatar"
-            "claim avatar";
-        grid-template-columns: auto 60px;
-        grid-template-rows: var(--line-height-name) var(--col-gap-sm) var(--line-height);
+.head-grid {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    column-gap: var(--col-gap-sm);
+    grid-template-areas:
+        "name avatar"
+        "line avatar"
+        "claim avatar";
+    grid-template-columns: auto 60px;
+    grid-template-rows: var(--line-height-name) var(--col-gap-sm) var(--line-height);
 
-        .name {
-            grid-area: name;
-            font-size: var(--font-size-name);
-            line-height: var(--line-height);
-        }
+}
 
-        .line {
-            grid-area: line;
-            display: block;
-            background-color: var(--color-primary);
-            height: 0.1rem;
-            width: 90%;
-        }
+.name {
+    grid-area: name;
+    font-size: var(--font-size-name);
+    line-height: var(--line-height);
+}
 
-        .claim {
-            grid-area: claim;
-            font-size: var(--font-size-claim);
-        }
+.line {
+    grid-area: line;
+    display: block;
+    background-color: var(--color-primary);
+    height: 0.1rem;
+    width: 90%;
+}
 
-        .avatar {
-            grid-area: avatar;
-            height: 100%;
+.claim {
+    grid-area: claim;
+    font-size: var(--font-size-claim);
+}
 
-            img,
-            source {
-                display: block;
-                max-height: 100%;
-                border-radius: 50%;
-            }
-        }
-    }
+.avatar {
+    grid-area: avatar;
+    height: 100%;
+
+}
+
+.avatar-img,
+.avatar-source {
+    display: block;
+    max-height: 100%;
+    border-radius: 50%;
 }
 
 h1 {
@@ -217,38 +219,38 @@ h1 {
     row-gap: var(--line-height);
     grid-template-columns: repeat(auto-fit, var(--col-w-sm) [keyword-start] minmax(min(100%, var(--min)), 1fr) [keyword-end]);
     align-items: center;
+}
 
-    svg.heading {
-        grid-column: 1/2;
-    }
+svg.heading {
+    grid-column: 1/2;
+}
 
-    h2 {
-        color: white;
-        font-weight: lighter;
-        margin: 0;
-        grid-column: 2/-1;
-    }
+h2 {
+    color: white;
+    font-weight: lighter;
+    margin: 0;
+    grid-column: 2/-1;
+}
 
-    .empty-row {
-        grid-column: 1/-1;
-        height: var(--line-height);
-    }
+.empty-row {
+    grid-column: 1/-1;
+    height: var(--line-height);
+}
 
-    svg {
-        height: var(--line-height);
-        width: 100%;
-    }
+svg {
+    height: var(--line-height);
+    width: 100%;
+}
 
-    a {
-        text-decoration: none;
-        color: var(--link-color);
-    }
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
 
-    .made-with {
-        grid-column: 1/-1;
-        place-self: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.made-with {
+    grid-column: 1/-1;
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
