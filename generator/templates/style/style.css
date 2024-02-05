@@ -101,6 +101,9 @@ textarea:not([rows]) {
     --v-spacing: 2em;
     --color-primary: #277aad;
     --link-color: #fff;
+    --font-size-name: clamp(1.125rem, 0.8309rem + 1.8382vw, 1.75rem);
+    --line-height-name: 1.75rem;
+    --font-size-claim: clamp(0.625rem, 0.5074rem + 0.7353vw, 0.875rem);
 }
 
 html {
@@ -147,6 +150,7 @@ body {
     padding-inline: var(--content-padding);
     height: 100svh;
     overflow-y: scroll;
+    font-weight: lighter;
 }
 
 .head {
@@ -165,13 +169,13 @@ body {
             "name avatar"
             "line avatar"
             "claim avatar";
+        grid-template-columns: auto 60px;
+        grid-template-rows: var(--line-height-name) var(--col-gap-sm) var(--line-height);
 
         .name {
             grid-area: name;
-            font-size: 1.1rem;
+            font-size: var(--font-size-name);
             line-height: var(--line-height);
-            letter-spacing: 0.05rem;
-            position: relative;
         }
 
         .line {
@@ -184,19 +188,25 @@ body {
 
         .claim {
             grid-area: claim;
-            font-size: 0.7rem;
+            font-size: var(--font-size-claim);
         }
 
         .avatar {
             grid-area: avatar;
-            display: flex;
+            height: 100%;
 
             img,
             source {
+                display: block;
+                max-height: 100%;
                 border-radius: 50%;
             }
         }
     }
+}
+
+h1 {
+    font-weight: normal;
 }
 
 .content-grid {
