@@ -6,7 +6,7 @@ use std::fs::File;
 use tera::{Context, Tera};
 
 fn main() {
-    let mut outfile = File::create("index.html").unwrap();
+    let mut outfile = File::create("../index.html").unwrap();
     let mut buffer = Vec::new();
     let context = Context::new();
     // Use globbing
