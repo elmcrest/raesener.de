@@ -92,7 +92,6 @@ textarea:not([rows]) {
 
 :root {
     --content-width: 50em;
-    --content-min-width: 16em;
     --content-padding: 1em;
     --col-gap-sm: 0.5em;
     --col-w-sm: 2em;
@@ -144,7 +143,6 @@ body {
 }
 
 .content {
-    min-width: var(--content-min-width);
     width: min(100%, var(--content-width));
     margin-inline: auto;
     padding-inline: var(--content-padding);
