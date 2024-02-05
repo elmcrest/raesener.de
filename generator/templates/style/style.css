@@ -149,6 +149,7 @@ body {
     height: 100svh;
     overflow-y: scroll;
     font-weight: lighter;
+    z-index: 1;
 }
 
 .head {
