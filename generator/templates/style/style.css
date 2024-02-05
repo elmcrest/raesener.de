@@ -92,12 +92,36 @@ textarea:not([rows]) {
 
 :root {
     --content-width: 50em;
+    --content-min-width: 16em;
     --content-padding: 1em;
+    --col-gap-sm: 0.5em;
+    --col-w-sm: 2em;
+    --col-gap: 1em;
+    --line-height: 1.5em;
+    --v-spacing: 2em;
+    --color-primary: #277aad;
+    --link-color: #fff;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    font-size: 100%;
+    line-height: var(--line-height);
 }
 
 body {
     margin: 0;
     color: white;
+}
+
+.fill-primary {
+    fill: var(--color-primary);
+}
+
+.fill-keyword-icon {
+    fill: white;
 }
 
 .stack {
@@ -117,9 +141,12 @@ body {
 }
 
 .content {
+    min-width: var(--content-min-width);
     width: min(100%, var(--content-width));
     margin-inline: auto;
     padding-inline: var(--content-padding);
+    height: 100svh;
+    overflow-y: scroll;
 }
 
 .head {
@@ -128,4 +155,91 @@ body {
     place-items: center;
     place-self: center;
     height: 100svh;
+
+    .head-grid {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        column-gap: var(--col-gap-sm);
+        grid-template-areas:
+            "name avatar"
+            "line avatar"
+            "claim avatar";
+
+        .name {
+            grid-area: name;
+            font-size: 1.1rem;
+            line-height: var(--line-height);
+            letter-spacing: 0.05rem;
+            position: relative;
+        }
+
+        .line {
+            grid-area: line;
+            display: block;
+            background-color: var(--color-primary);
+            height: 0.1rem;
+            width: 90%;
+        }
+
+        .claim {
+            grid-area: claim;
+            font-size: 0.7rem;
+        }
+
+        .avatar {
+            grid-area: avatar;
+            display: flex;
+
+            img,
+            source {
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.content-grid {
+    --min: 13ch;
+    display: grid;
+    /* min() with 100% prevents overflow
+    in extra narrow spaces */
+    column-gap: var(--col-gap);
+    row-gap: var(--line-height);
+    grid-template-columns: repeat(auto-fit, var(--col-w-sm) [keyword-start] minmax(min(100%, var(--min)), 1fr) [keyword-end]);
+    align-items: center;
+
+    svg.heading {
+        grid-column: 1/2;
+    }
+
+    h2 {
+        color: white;
+        font-weight: lighter;
+        margin: 0;
+        grid-column: 2/-1;
+    }
+
+    .empty-row {
+        grid-column: 1/-1;
+        height: var(--line-height);
+    }
+
+    svg {
+        height: var(--line-height);
+        width: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--link-color);
+    }
+
+    .made-with {
+        grid-column: 1/-1;
+        place-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
