@@ -97,6 +97,8 @@ textarea:not([rows]) {
     --col-w-sm: 2em;
     --col-gap: 1em;
     --line-height: 1.5em;
+    --line-height-h1: calc(--line-height * 2);
+    --line-height-h2: calc(--line-height * 1);
     --v-spacing: 2em;
     --color-primary: #277aad;
     --link-color: #fff;
@@ -117,6 +119,20 @@ body {
     margin: 0;
     color: white;
 }
+
+h1 {
+    font-weight: normal;
+    line-height: var(--line-height-h1);
+}
+
+h2 {
+    color: white;
+    font-weight: lighter;
+    margin: 0;
+    grid-column: 2/-1;
+    line-height: var(--line-height-h2);
+}
+
 
 .fill-primary {
     fill: var(--color-primary);
@@ -192,6 +208,7 @@ body {
 .claim {
     grid-area: claim;
     font-size: var(--font-size-claim);
+    align-self: start;
 }
 
 .avatar {
@@ -205,10 +222,6 @@ body {
     display: block;
     max-height: 100%;
     border-radius: 50%;
-}
-
-h1 {
-    font-weight: normal;
 }
 
 .content-grid {
@@ -226,12 +239,6 @@ svg.heading {
     grid-column: 1/2;
 }
 
-h2 {
-    color: white;
-    font-weight: lighter;
-    margin: 0;
-    grid-column: 2/-1;
-}
 
 .empty-row {
     grid-column: 1/-1;
@@ -254,4 +261,14 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#foo {
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(auto-fill, var(--line-height));
 }
