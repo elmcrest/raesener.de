@@ -91,6 +91,16 @@ textarea:not([rows]) {
 /* custom css after css reset */
 
 :root {
+    --color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color: #fff;
+    }
+}
+
+:root {
     --content-width: 50em;
     --content-padding: 1em;
     --col-gap-sm: 0.5em;
@@ -100,11 +110,13 @@ textarea:not([rows]) {
     --line-height-h1: calc(--line-height * 2);
     --line-height-h2: calc(--line-height * 1);
     --v-spacing: 2em;
-    --color-primary: #277aad;
-    --link-color: #fff;
     --font-size-name: clamp(1.125rem, 0.8309rem + 1.8382vw, 1.75rem);
     --line-height-name: 1.75rem;
     --font-size-claim: clamp(0.625rem, 0.5074rem + 0.7353vw, 0.875rem);
+    --font-weight: lighter;
+    --color-primary: #277aad;
+    --link-color: var(--color);
+    --fill-keyword-color: var(--color);
 }
 
 html {
@@ -117,7 +129,7 @@ html {
 
 body {
     margin: 0;
-    color: white;
+    color: var(--color);
 }
 
 h1 {
@@ -126,8 +138,8 @@ h1 {
 }
 
 h2 {
-    color: white;
-    font-weight: lighter;
+    color: var(--color);
+    font-weight: var(--font-weight);
     margin: 0;
     grid-column: 2/-1;
     line-height: var(--line-height-h2);
@@ -139,7 +151,7 @@ h2 {
 }
 
 .fill-keyword-icon {
-    fill: white;
+    fill: var(--fill-keyword-color);
 }
 
 .stack {
@@ -149,6 +161,7 @@ h2 {
 
 .stack>* {
     grid-area: stack;
+    box-sizing: border-box;
 }
 
 .stack video {
@@ -158,14 +171,32 @@ h2 {
     height: 100vh;
 }
 
+.light-video {
+    display: block;
+}
+
+.dark-video {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .dark-video {
+        display: block;
+    }
+
+    .light-video {
+        display: none;
+    }
+}
+
 .content {
     width: min(100%, var(--content-width));
-    margin-inline: auto;
     padding-inline: var(--content-padding);
+    margin-inline: auto;
     height: 100svh;
     overflow-y: auto;
     scrollbar-width: none;
-    font-weight: lighter;
+    font-weight: var(--font-weight);
     z-index: 1;
 }
 
@@ -261,14 +292,4 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#foo {
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    pointer-events: none;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(auto-fill, var(--line-height));
 }

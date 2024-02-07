@@ -159,6 +159,16 @@ textarea:not([rows]) {
 /* custom css after css reset */
 
 :root {
+    --color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color: #fff;
+    }
+}
+
+:root {
     --content-width: 50em;
     --content-padding: 1em;
     --col-gap-sm: 0.5em;
@@ -168,11 +178,13 @@ textarea:not([rows]) {
     --line-height-h1: calc(--line-height * 2);
     --line-height-h2: calc(--line-height * 1);
     --v-spacing: 2em;
-    --color-primary: #277aad;
-    --link-color: #fff;
     --font-size-name: clamp(1.125rem, 0.8309rem + 1.8382vw, 1.75rem);
     --line-height-name: 1.75rem;
     --font-size-claim: clamp(0.625rem, 0.5074rem + 0.7353vw, 0.875rem);
+    --font-weight: lighter;
+    --color-primary: #277aad;
+    --link-color: var(--color);
+    --fill-keyword-color: var(--color);
 }
 
 html {
@@ -185,7 +197,7 @@ html {
 
 body {
     margin: 0;
-    color: white;
+    color: var(--color);
 }
 
 h1 {
@@ -194,8 +206,8 @@ h1 {
 }
 
 h2 {
-    color: white;
-    font-weight: lighter;
+    color: var(--color);
+    font-weight: var(--font-weight);
     margin: 0;
     grid-column: 2/-1;
     line-height: var(--line-height-h2);
@@ -207,7 +219,7 @@ h2 {
 }
 
 .fill-keyword-icon {
-    fill: white;
+    fill: var(--fill-keyword-color);
 }
 
 .stack {
@@ -217,6 +229,7 @@ h2 {
 
 .stack>* {
     grid-area: stack;
+    box-sizing: border-box;
 }
 
 .stack video {
@@ -226,14 +239,32 @@ h2 {
     height: 100vh;
 }
 
+.light-video {
+    display: block;
+}
+
+.dark-video {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .dark-video {
+        display: block;
+    }
+
+    .light-video {
+        display: none;
+    }
+}
+
 .content {
     width: min(100%, var(--content-width));
-    margin-inline: auto;
     padding-inline: var(--content-padding);
+    margin-inline: auto;
     height: 100svh;
     overflow-y: auto;
     scrollbar-width: none;
-    font-weight: lighter;
+    font-weight: var(--font-weight);
     z-index: 1;
 }
 
@@ -330,16 +361,6 @@ a {
     flex-direction: column;
     align-items: center;
 }
-
-#foo {
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    pointer-events: none;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(auto-fill, var(--line-height));
-}
   </style>
 
   <body>
@@ -350,7 +371,22 @@ a {
       autoplay
       playsinline
       preload="none"
+      poster="/assets/background-video/typing3_light_720pFrame0.jpg"
+      class="light-video"
+    >
+      <source
+        src="/assets/background-video/typing3_light_720pCBR23.mp4"
+        type="video/mp4"
+      />
+    </video>
+<video
+      loop
+      muted
+      autoplay
+      playsinline
+      preload="none"
       poster="/assets/background-video/typing3_720pFrame0.jpg"
+      class="dark-video"
     >
       <source
         src="/assets/background-video/typing3_720pCBR23.mp4"
@@ -375,9 +411,7 @@ a {
     Mit umfassender Erfahrung als Lead Architect und Developer, tiefer Leidenschaft für
     Smarthome-Technologien und einem Auge für die Kunst der Fotografie, vereine ich Technikverständnis mit kreativem
     Denken.<br /><br />
-    Ob Sie ein Unternehmen oder ein technikaffiner Enthusiast sind, ich bin bereit, mein Netzwerk und mein
-    Know-how mit Ihnen zu teilen. Kontaktieren Sie mich, und lassen Sie uns die Möglichkeiten der Technologie gemeinsam
-    ausschöpfen.<br /><br />
+    Ob Sie ein Unternehmen oder ein technikaffiner Enthusiast sind, ich freue mich immer mein Netzwerk zu erweitern. Kontaktieren Sie mich einfach über eine der die nachfolgenden Kanäle.<br /><br />
 </p>
 <div class="content-grid">
     <div class="empty-row" area-hidden="true"></div>
@@ -429,7 +463,7 @@ a {
         </path>
     </g>
 </svg>
-<h2>tech stack</h2>
+<h2>Sprachen</h2>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
     <g class="fill-keyword-icon">
         <path
@@ -506,7 +540,15 @@ a {
 </svg>
 <a rel="noreferrer" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>
     <div class="empty-row" area-hidden="true"></div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 172" class="heading">
+    <g class="fill-primary">
+        <path
+            d="M61.92,30.96l-2.58,27.52h-24.94l-0.645,6.88h24.94l-4.1925,44.72h-24.94l-0.645,6.88h24.94l-2.2575,24.08h6.88l2.2575,-24.08h44.72l-2.2575,24.08h6.88l2.2575,-24.08h26.66l0.645,-6.88h-26.66l4.1925,-44.72h26.66l0.645,-6.88h-26.66l2.58,-27.52h-6.88l-2.58,27.52h-44.72l2.58,-27.52zM65.575,65.36h44.72l-4.1925,44.72h-44.72z">
+        </path>
+    </g>
+</svg>
+<h2>Technologien</h2>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g class="fill-keyword-icon">
         <path
             d="M16.872,24c-0.074,0-0.149-0.017-0.218-0.05l-3.424-1.661c-0.173-0.083-0.282-0.259-0.282-0.451s0.11-0.367,0.284-0.45c1.509-0.724,2.237-1.342,2.686-2.281c0.495-1.009,0.646-2.264,0.646-5.376V6.307c0-0.276,0.224-0.5,0.5-0.5h3.687c0.276,0,0.5,0.225,0.5,0.501v8.718c0,3.105-0.231,4.6-0.918,5.92c-0.659,1.319-1.536,2.134-3.232,2.999C17.028,23.982,16.95,24,16.872,24z M14.559,21.822l2.306,1.118c1.355-0.72,2.042-1.378,2.577-2.448c0.605-1.166,0.809-2.543,0.809-5.466V6.808l-2.687-0.001v6.925c0,3.331-0.167,4.634-0.745,5.812C16.373,20.475,15.708,21.158,14.559,21.822z" />
@@ -658,23 +700,28 @@ stroke-miterlimit: 2;
     </g>
 </svg>
 <a rel="noreferrer" target="_blank" href="https://kubernetes.io">Kubernetes</a>
+<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g class="fill-keyword-icon">
+        <path d="M10.825,22.495l-8.269,0c-0.578,-0.002 -1.053,-0.477 -1.056,-1.055l-0,-8.033l0.062,0c5.061,0 9.191,4.069 9.263,9.088Zm6.655,0l-3.539,0c-0.073,-6.779 -5.62,-12.265 -12.441,-12.295l-0,-3.416l0.062,-0c8.735,-0 15.856,7.038 15.918,15.711Zm3.964,0l-0.849,0c-0.06,-10.432 -8.599,-18.888 -19.095,-18.919l-0,-1.015c-0,-0.579 0.476,-1.055 1.056,-1.055l6.685,-0c6.025,2.173 10.859,6.81 13.259,12.689l-0,7.255c-0,0.58 -0.476,1.045 -1.056,1.045Zm-5.32,-20.989l5.33,-0c0.002,-0 0.003,-0 0.005,-0c0.571,-0 1.041,0.47 1.041,1.041c0,0.001 0,0.002 -0,0.003l-0,5.175c-0.796,-1.087 -1.79,-2.319 -2.763,-3.292c-1.098,-1.086 -2.38,-2.069 -3.612,-2.928l-0.001,0.001Z" style="fill-rule:nonzero;"/>
+    </g>
+</svg>
+<a rel="noreferrer" target="_blank" href="https://mqtt.org/">mqtt</a>
 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
     <path class="fill-keyword-icon"
         d="M23.395 7.081c-.488-.207-1.053-.002-1.29.472-.224.448-.523.723-.914.838-.612.183-1.343-.052-1.685-.253-.451-.265-.974-.667-1.527-1.092C16.214 5.688 14.018 4 11 4 8.586 4 7.346 5.239 5.293 7.293 4.902 7.684 4.899 8.32 5.29 8.71 5.67 9.092 6.28 9.104 6.672 8.74c.01-.009.02-.019.03-.028.552-.426 4.03-.012 5.55 1.196C14.511 11.703 16.142 13 18 13c2.659 0 4.879-1.741 5.94-4.658C24.121 7.844 23.882 7.291 23.395 7.081zM18.395 14.081c-.488-.207-1.053-.002-1.29.472-.224.448-.523.723-.914.838-.612.18-1.343-.052-1.685-.253-.451-.265-.974-.667-1.527-1.092C11.214 12.688 9.018 11 6 11c-2.414 0-3.654 1.239-5.707 3.293-.391.391-.394 1.027-.003 1.417.38.382.991.395 1.383.03.01-.009.02-.019.03-.028.551-.426 4.031-.012 5.55 1.196C9.511 18.703 11.142 20 13 20c2.659 0 4.879-1.741 5.94-4.658C19.121 14.844 18.882 14.291 18.395 14.081z">
     </path>
 </svg>
-<a rel="noreferrer" target="_blank" href="https://kubernetes.io">TailwindCSS</a>
+<a rel="noreferrer" target="_blank" href="https://tailwindcss.com/">TailwindCSS</a>
     <div class="empty-row" area-hidden="true"></div>
     <div class="made-with">
-    <span>100% handmade</span>
-    <span>no frameworks, no JavaScript</span>
-    <a rel="noreferrer" target="_blank" href="https://icons8.com">most icons by Icons8.com</a>
-    <a rel="noreferrer" target="_blank" href="https://www.netlify.com/">globally served by netlifyCDN</a>
+    <span>100% handgemacht</span>
+    <span>keine frameworks, kein JavaScript</span>
+    <a rel="noreferrer" target="_blank" href="https://icons8.com">fast alle Icons von Icons8.com</a>
+    <a rel="noreferrer" target="_blank" href="https://www.netlify.com/">global verteilt durch netlifyCDN</a>
 </div>
     <div class="empty-row" area-hidden="true"></div>
     <div class="empty-row" area-hidden="true"></div>
 </div></div>
-      <div id="foo"></div>
     </div>
   </body>
 </html>
